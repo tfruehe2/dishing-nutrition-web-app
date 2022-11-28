@@ -1,33 +1,32 @@
+import React from 'react'
+import AdminLayout from '@/components/Layouts/AdminLayout'
 import Head from 'next/head'
-import AppLayout from '@/components/Layouts/AppLayout'
 
-export default function Home() {
 
+const AdminDashboard = () => {
     return (
-        <AppLayout
+        <AdminLayout
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Home
+                    Admin Panel
                 </h2>
             }>
 
             <Head>
-                <title>Home Page</title>
-                <meta
-                    name="description"
-                    content="Learn more about RN Meg Hilbert and her gut health mission with Dishing Nutrition."
-                />
+                <title>Dishing Nutrition Admin Panel</title>
             </Head>
 
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 bg-white border-b border-gray-200">
-                            This is the home page
+                            You're logged in! Admin
                         </div>
                     </div>
                 </div>
             </div>
-        </AppLayout>
+        </AdminLayout>
     )
 }
+
+export default AdminDashboard

@@ -1,18 +1,19 @@
-import Head from 'next/head'
+import React from 'react'
 import AppLayout from '@/components/Layouts/AppLayout'
+import Head from 'next/head'
 
-export default function Home() {
-
+const ContactPage = () => {
+    
     return (
         <AppLayout
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Home
+                    Contact
                 </h2>
             }>
 
             <Head>
-                <title>Home Page</title>
+                <title>Contact</title>
                 <meta
                     name="description"
                     content="Learn more about RN Meg Hilbert and her gut health mission with Dishing Nutrition."
@@ -23,7 +24,7 @@ export default function Home() {
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 bg-white border-b border-gray-200">
-                            This is the home page
+                            This is the contact page
                         </div>
                     </div>
                 </div>
@@ -31,3 +32,5 @@ export default function Home() {
         </AppLayout>
     )
 }
+
+export default ContactPage
