@@ -23,14 +23,14 @@ export interface TableHeader {
 export const TableComponent = (props: {
     tableName: string;
     headers: Array<TableHeader>;
-    rows?: Array<RowData>;
+    rows?: Array<any>;
     canSortAndFilter: boolean;
     sortByCallback?: (fieldName: string, sortDirection: 'ASC' | 'DESC') => void;
     filterByCallback?: (fieldName: string, value: string) => void;
     paginationProps?: PaginationProps;
     editableInline?: boolean;
-    viewRecord?: (id) => void;
-    deleteRecord?: (id) => void;
+    viewRecord?: (id: number) => void;
+    deleteRecord?: (id: number) => void;
     saveInlineChanges?: (data: any) => void;
     canAddRecord?: boolean;
     createRecord?: (data: any) => void;
@@ -46,6 +46,8 @@ export const TableComponent = (props: {
             cellType: header.cellType || 'TextCell'
         };
     });
+
+    console.log(props.rows)
     return (
         <div className="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
             <table className="min-w-full divide-y divide-gray-300">
@@ -66,9 +68,9 @@ export const TableComponent = (props: {
                         props.rows.map((row) => {
                             return (
                                 <TableRow
-                                    key={row.recordId + '_' + props.tableName}
-                                    data={row.data}
-                                    recordId={row.recordId}
+                                    key={row.id + '_' + props.tableName}
+                                    data={row}
+                                    recordId={row.id}
                                     editableInline={props.editableInline}
                                     headerFields={headerFields}
                                     saveChanges={props.saveInlineChanges}

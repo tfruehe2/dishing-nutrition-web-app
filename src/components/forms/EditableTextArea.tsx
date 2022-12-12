@@ -1,5 +1,4 @@
 import React from 'react';
-import sanitizeHtml from 'sanitize-html'
 
 export const EditableTextArea = (props: {
     editable: boolean;
@@ -23,10 +22,9 @@ export const EditableTextArea = (props: {
 
     function displayValue()
     {
-        let fieldValue = sanitizeHtml(props.fieldValue || 'N/A');
-
-        return fieldValue.replaceAll(/(?:\r\n|\r|\n)/g, '<br \>')
+        return props.fieldValue.replaceAll(/(?:\r\n|\r|\n)/g, '<br \>')
     }
+    
     return (
         <div className={props.className}>
             <label

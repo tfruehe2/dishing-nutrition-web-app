@@ -1,13 +1,13 @@
-import Navigation from '@/components/Layouts/Navigation'
 import { useAuth } from '@/hooks/auth'
+import AdminNavigation from './AdminNavigation'
 import { Footer } from './Footer'
 
 const AdminLayout = ({ header, children}) => {
-    const { user } = useAuth({ middleware: 'admin' })
-
+    const { user } = useAuth({ middleware: 'auth' })
+    
     return (
         <div className="min-h-screen bg-gray-100">
-            <Navigation user={user} />
+            <AdminNavigation user={user} />
 
             {/* Page Heading */}
             {/* <header className="bg-white shadow">

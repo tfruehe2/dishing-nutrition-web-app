@@ -2,7 +2,6 @@ import React from 'react';
 import { NumberCell } from './NumberCell';
 import { TextAreaCell } from './TextAreaCell';
 import { TextCell } from './TextCell';
-import { VideoCell } from './VideoCell';
 import { YesNoCell } from './YesNoCell';
 import { BaseCellProps } from './BaseCell';
 
@@ -19,9 +18,6 @@ export const CellRenderer = (props: { cellProps: BaseCellProps; cellType: string
 
         case 'YesNoCell':
             return <YesNoCell {...props.cellProps} />;
-
-        case 'VideoCell':
-            return <VideoCell {...props.cellProps} />;
 
         default:
             return <TextCell {...props.cellProps} />;

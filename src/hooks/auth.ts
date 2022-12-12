@@ -105,8 +105,8 @@ export const useAuth = ({ middleware, redirectIfAuthenticated }: any = {}) => {
 
     useEffect(() => {
         const nonAdminLoggedIn = (!!user && !userHasRole('admin'));
-        if (middleware === 'guest' && redirectIfAuthenticated && user) router.push(redirectIfAuthenticated)
         if (middleware === 'optional') return
+        if (middleware === 'guest' && redirectIfAuthenticated && user) router.push(redirectIfAuthenticated)
         if (middleware === 'admin' && (error || nonAdminLoggedIn)) {
             router.push(nonAdminLoggedIn ? '/dashboard' : '/');
         }

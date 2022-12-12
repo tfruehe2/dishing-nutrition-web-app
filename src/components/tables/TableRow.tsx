@@ -11,8 +11,8 @@ export const TableRow = (props: {
     recordId: number;
     data: Object;
     editableInline?: boolean;
-    viewRecord?: (id) => void;
-    deleteRecord?: (id) => void;
+    viewRecord?: (id: number) => void;
+    deleteRecord?: (id: number) => void;
     saveChanges?: (data: any) => void;
     headerFields: Array<{
         fieldName: string;

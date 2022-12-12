@@ -22,10 +22,15 @@
     "@tiptap/extension-text-align": "^2.0.0-beta.204",
     "@tiptap/react": "^2.0.0-beta.204",
     "@tiptap/starter-kit": "^2.0.0-beta.204",
+    "array-move": "^4.0.0",
     "axios": "^0.21.1",
+    "framer-motion": "^7.6.19",
+    "lodash.debounce": "^4.0.8",
     "next": "^13.0.3",
+    "popmotion": "^11.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-sticky-box": "^1.0.2",
     "swr": "^1.3.0"
   },
   "devDependencies": {

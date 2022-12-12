@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { XIcon } from '@heroicons/react/outline';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 export function Modal(props: {
     modalTitle: string;
@@ -43,7 +43,7 @@ export function Modal(props: {
                                         onClick={() => props.setOpen(false)}
                                     >
                                         <span className="sr-only">Close</span>
-                                        <XIcon className="h-6 w-6" aria-hidden="true" />
+                                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                                     </button>
                                 </div>
                                 <div className="sm:flex sm:items-start">

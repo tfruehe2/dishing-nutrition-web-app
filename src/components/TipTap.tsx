@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEditor, EditorContent } from '@tiptap/react'
+import { useEditor, EditorContent, Editor } from '@tiptap/react'
 import Table from '@tiptap/extension-table'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
@@ -196,8 +196,17 @@ const MenuBar = ({ editor, tableFeature=true }) => {
     )
   }
 
-const Tiptap = () => {
+const Tiptap = (props: {content:string, onChange: (e: any) => void}) => {
   const editor = useEditor({
+    onUpdate({ editor }) {
+      const e = {
+        target: {
+          name: 'contentHTML',
+          value: editor.getHTML()
+      }}
+      props.onChange(e)
+      // The content has changed.
+    },
     extensions: [
         TableHeader,
         TableCell,
@@ -213,9 +222,10 @@ const Tiptap = () => {
             }
         }),
     ],
-    content: '<p>Hello World! 🌎️</p>',
+    content: props.content,
     editorProps: {
         attributes: {
+          
           spellcheck: 'true',
           class: 'prose prose-sm sm:prose lg:prose-lg m-5 focus:outline-none text-black',
         },

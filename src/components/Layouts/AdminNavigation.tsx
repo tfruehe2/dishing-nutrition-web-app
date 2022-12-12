@@ -17,7 +17,7 @@ interface NavLink {
     children?: Array<NavLink>;
 }
 
-const Navigation = (props: {
+const AdminNavigation = (props: {
     user: any
 }) => {
     const router = useRouter()
@@ -45,27 +45,23 @@ const Navigation = (props: {
     const mainNavigation: Array<NavLink> = [
         {
             name: 'Home',
-            href: '/'
-        },
-        {
-            name: 'Work With Me',
-            href: '/work-with-me'
+            href: '/admin'
         },
         {
             name: 'Recipes',
-            href: '/recipes'
+            href: '/admin/recipes'
+        },
+        {
+            name: 'Ingredients',
+            href: '/admin/ingredients'
         },
         {
             name: 'Blog',
-            href: '/blog'
+            href: '/admin/blogs'
         },
         {
-            name: 'About',
-            href: '/about'
-        },
-        {
-            name: 'Contact',
-            href: '/contact'
+            name: 'Site Details',
+            href: '/admin'
         },
     ];
 
@@ -414,4 +410,4 @@ const Navigation = (props: {
     );
 };
 
-export default Navigation;
+export default AdminNavigation;
